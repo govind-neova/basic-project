@@ -40,7 +40,7 @@ integrations:
   # turning of email for PR builds, get notified only on failure and change in status
   # http://docs.shippable.com/integrations/notifications/email/
     - integrationName: sarafkg123@gmail.com
-      type: mail
+      type: notification
       on_success: change
       on_failure: always
       on_pull_request: never
