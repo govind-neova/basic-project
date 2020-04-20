@@ -31,6 +31,7 @@ build:
     #- popd
     - echo "hiiiiiiiiiiii"
     - date
+    - echo "$(shipctl get_integration_resource_field SONAR-SERVER "Key")"
 
 
 # Integrations are used to connect external resources to CI
