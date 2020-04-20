@@ -30,6 +30,7 @@ build:
     - $MOD_LOC/istanbul report cobertura --dir $CODE_COVERAGE_DIR
     - popd
     - echo "hiiiiiiiiiiii"
+    - date
 
 
 # Integrations are used to connect external resources to CI
