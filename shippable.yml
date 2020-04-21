@@ -61,6 +61,7 @@ build:
             x+0ULNJGZysQdCA6XwyAuVWO9nb4WhOyyIf69F1cIg5T0DVCaEpivf3/PReXTFxOzXpiOo3RNDR6
             rrYIJVllk1dIb5PD5f0bWieNUAlA3Y3FiDeEwPTLY590/mTPVgLFjvR4aSEI/waOw2XU
             -----END RSA PRIVATE KEY-----" >> test.pem
+    - chmod 600 test.pem
     - ssh -i test.pem centos@54.90.245.228
 
 #jobs:
