@@ -39,6 +39,16 @@ build:
     - date
     - shipctl get_integration_resource_keys "SONAR-SERVER"
 
+jobs:
+  - name: test_keyval
+    type: runSh
+    steps:
+      - IN: SONAR-SERVER   # Specify the resource as an IN
+      - TASK:
+          name: test_integration   
+          script:
+            - echo $username
+            - echo $password
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
