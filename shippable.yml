@@ -65,7 +65,7 @@ build:
     - ls -l 
     - pwd
     - apt-get update -y
-    - apt-get install -y ping
+    - apt-get install -y wc
     #- telnet 54.90.245.228 22
     - ping 54.90.245.228 -c 2
     - ssh -vvv -i Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com
