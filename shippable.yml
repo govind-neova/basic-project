@@ -68,7 +68,7 @@ build:
     #- apt install -y wc
     #- telnet 54.90.245.228 22
     #- ping 54.90.245.228 -c 2
-    - ssh -vvv -i Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com "mkdir -p /tmp/sample"
+    - ssh -vvv -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com "mkdir -p /tmp/sample"
 
 #jobs:
 #  - name: myCustomJob
