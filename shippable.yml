@@ -6,11 +6,11 @@ language: node_js
 branches:
   only:
     - master
-
+    
 resources:
-  - name: mySecret
+  - name: pem_keys
     type: integration
-    integration: SONAR-SERVER
+    integration: "SONAR-SERVER"
 
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
@@ -38,17 +38,7 @@ build:
     - echo "hiiiiiiiiiiii"
     - date
     - ip r
-
-jobs:
-  - name: test_keyval
-    type: runSh
-    steps:
-      - IN: SONAR-SERVER   # Specify the resource as an IN
-      - TASK:
-          name: test_integration   
-          script:
-            - echo $username
-            - echo $password
+    - shipctl get_integration_resource_field SONAR-SERVER "Key"
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
