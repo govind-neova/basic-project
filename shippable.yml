@@ -61,13 +61,13 @@ build:
     #        x+0ULNJGZysQdCA6XwyAuVWO9nb4WhOyyIf69F1cIg5T0DVCaEpivf3/PReXTFxOzXpiOo3RNDR6
     #        rrYIJVllk1dIb5PD5f0bWieNUAlA3Y3FiDeEwPTLY590/mTPVgLFjvR4aSEI/waOw2XU
     #        -----END RSA PRIVATE KEY-----" >> Neov-nvirg.pem
-    #- chmod 400 Neov-nvirg.pem
     - ls -l 
     - pwd
     #- apt update -y
     #- apt install -y wc
     #- telnet 54.90.245.228 22
     #- ping 54.90.245.228 -c 2
+    - chmod 400 /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem
     - ssh -vvv -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com "mkdir -p /tmp/sample"
 
 #jobs:
