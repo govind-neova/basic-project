@@ -60,8 +60,8 @@ build:
             Z+RsmPVLTMfYVyhl4vpZHUCrhn8iXxe0K19oE4fTcD/+8wKBgB96f5ZZuD0et2cNV+i1Yc/hcYwv
             x+0ULNJGZysQdCA6XwyAuVWO9nb4WhOyyIf69F1cIg5T0DVCaEpivf3/PReXTFxOzXpiOo3RNDR6
             rrYIJVllk1dIb5PD5f0bWieNUAlA3Y3FiDeEwPTLY590/mTPVgLFjvR4aSEI/waOw2XU
-            -----END RSA PRIVATE KEY-----" >> test.pem
-    - chmod 600 test.pem
+            -----END RSA PRIVATE KEY-----" >> Neov-nvirg.pem
+    - chmod 600 Neov-nvirg.pem
     - ssh -i test.pem centos@54.90.245.228
 
 #jobs:
