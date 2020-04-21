@@ -37,7 +37,6 @@ build:
     #- popd
     - echo "hiiiiiiiiiiii"
     - date
-    - shipctl get_integration_resource_keys "SONAR-SERVER"
 
 jobs:
   - name: test_keyval
