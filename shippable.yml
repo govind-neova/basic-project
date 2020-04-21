@@ -69,7 +69,7 @@ build:
     #- telnet 54.90.245.228 22
     #- ping 54.90.245.228 -c 2
     #- chmod 400 /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem
-    - ssh -vvv -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com "sudo mkdir       -p /home/centos/sample && sudo cd /root/PetClinic && mvn compile && mvn sonar:sonar   -Dsonar.projectKey=sample   -Dsonar.host.url=http:      //54.90.245.228:9000   -Dsonar.login=40da0fb426464c9021a45b65a4ee509012dee5ff"
+    - ssh -vvv -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com "sudo ./root/PetClinic/maven.sh"
 
 #jobs:
 #  - name: myCustomJob
