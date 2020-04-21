@@ -39,7 +39,7 @@ build:
     - date
     - ip r
     - echo "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")"
-    - ssh -i $(shipctl get_integration_resource_field SONAR-SERVER "Keys") centos@54.90.245.228
+    - ssh -i "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")" centos@54.90.245.228
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
