@@ -38,7 +38,7 @@ build:
     - echo "hiiiiiiiiiiii"
     - date
     - ip r
-    - shipctl get_integration_resource_field SONAR-SERVER "Key"
+    - shipctl get_integration_resource_field SONAR-SERVER 
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
