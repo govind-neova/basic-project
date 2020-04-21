@@ -32,7 +32,7 @@ build:
     #- popd
     - echo "hiiiiiiiiiiii"
     - date
-    - echo "$(Access_key)"
+    - shipctl get_integration_resource_keys "SONAR-SERVER"
 
 
 # Integrations are used to connect external resources to CI
