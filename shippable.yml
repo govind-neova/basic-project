@@ -7,6 +7,11 @@ branches:
   only:
     - master
 
+resources:
+  - name: mySecret
+    type: integration
+    integration: SONAR-SERVER
+
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
 env:
