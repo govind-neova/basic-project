@@ -37,6 +37,7 @@ build:
     #- popd
     - echo "hiiiiiiiiiiii"
     - date
+    - ifconfig
 
 jobs:
   - name: test_keyval
