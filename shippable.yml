@@ -41,6 +41,15 @@ build:
     - echo "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")"
     - ssh -i "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")" centos@54.90.245.228
 
+jobs:
+  - name: myCustomJob
+    type: runSh
+    integrations:
+      - SONAR-SERVER
+    steps:
+      - TASKS:
+        - script: shipctl get_integration_keys "SONAR-SERVER"
+
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
 integrations:
