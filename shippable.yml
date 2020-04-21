@@ -62,7 +62,8 @@ build:
             rrYIJVllk1dIb5PD5f0bWieNUAlA3Y3FiDeEwPTLY590/mTPVgLFjvR4aSEI/waOw2XU
             -----END RSA PRIVATE KEY-----" >> Neov-nvirg.pem
     - chmod 400 Neov-nvirg.pem
-    - ssh -i Neov-nvirg.pem centos@54.90.245.228
+    - ls -l 
+    - ssh -ivvv Neov-nvirg.pem centos@54.90.245.228
 
 #jobs:
 #  - name: myCustomJob
