@@ -64,7 +64,7 @@ build:
     - chmod 400 Neov-nvirg.pem
     - ls -l 
     - pwd
-    - yum install -y ping
+    - apt-get install -y ping
     #- telnet 54.90.245.228 22
     - ping 54.90.245.228 -c 2
     - ssh -vvv -i Neov-nvirg.pem centos@ec2-54-90-245-228.compute-1.amazonaws.com
