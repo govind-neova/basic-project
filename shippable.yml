@@ -69,7 +69,7 @@ build:
     #- telnet 54.90.245.228 22
     #- ping 54.90.245.228 -c 2
     #- chmod 400 /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem
-    - ssh -it /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com "./opt/sonar.sh"
+    - ssh -t -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com "./opt/sonar.sh"
 
 #jobs:
 #  - name: myCustomJob
