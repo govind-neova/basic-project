@@ -69,7 +69,7 @@ build:
     #- telnet 54.90.245.228 22
     #- ping 54.90.245.228 -c 2
     #- chmod 400 /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem
-    - ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "sudo sh /opt/sonar.sh https://github.com/puppeteer/puppeteer.git puppeteer "
+    - ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "sudo -s ./opt/sonar.sh https://github.com/puppeteer/puppeteer.git puppeteer"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
 #jobs:
 #  - name: myCustomJob
