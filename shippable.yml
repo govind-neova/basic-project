@@ -7,10 +7,11 @@ branches:
   only:
     - master
     
-#resources:
-#  - name: pem_keys
-#    type: integration
-#    integration: "SONAR-SERVER"
+resources:
+  - name: SONAR-SERVER
+    type: integration
+    integration: "dr_aws"
+
 
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
