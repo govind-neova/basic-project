@@ -65,8 +65,8 @@ build:
     - chmod 400 Neov-nvirg.pem
     - ls -l 
     - pwd
-      #- export AWS_ACCESS_KEY_ID=$(shipctl get_integration_resource_field dr_aws "Keys")
-      #- ./ssh.sh
+    - export AWS_ACCESS_KEY_ID=$(shipctl get_integration_resource_field dr_aws "Keys")
+    - ./ssh.sh
     #- apt update -y
     #- apt install -y wc
     #- telnet 54.90.245.228 22
