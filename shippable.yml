@@ -69,7 +69,8 @@ build:
     #- telnet 54.90.245.228 22
     #- ping 54.90.245.228 -c 2
     #- chmod 400 /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem
-    - ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
+    #- export AWS_SECRET_ACCESS_KEY=$(shipctl get_integration_field dr_aws )
+    #- ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
 #jobs:
 #  - name: myCustomJob
@@ -81,20 +82,21 @@ build:
 #        - script: shipctl get_integration_keys "SONAR-SERVER"
 
 resources:
-  - name: pem_keys
+  - name: SONAR-SERVER
     type: integration
-    integration: "SONAR-SERVER"
+    integration: "dr_aws"
 
 jobs:
   - name: deploy_war_vm_ans
     type: runSh
     steps:
-      - IN: pem_keys
-        switch: off
+      - IN: dr_aws
+        switch: on
       - TASK:
           name: deploy_war
           script:
-            - echo "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")"
+            - export $(shipctl get_integration_resource_field dr_aws "Keys")
+            - ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"  
 
 # Integrations are used to connect external resources to CI
 # http://docs.shippable.com/integrations/overview/
