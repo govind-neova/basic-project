@@ -85,7 +85,7 @@ jobs:
   - name: deploy_war_vm_ans
     type: runSh
     steps:
-      - IN: dr_aws
+      - IN: aws_ec2_creds
         switch: on
       - TASK:
           name: deploy_war
