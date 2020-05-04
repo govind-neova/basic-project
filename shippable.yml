@@ -73,7 +73,7 @@ jobs:
       - TASK:
           name: deploy_war
           script:
-            - export pem_key_name=$(shipctl get_integration_resource_field aws_ec2_creds "Keys")
+            - export pem_key_name=$(shipctl get_integration_resource_field pem_cd_war_vm "Keys")
             - ./ssh.sh
 
 integrations:
