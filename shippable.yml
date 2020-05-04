@@ -58,23 +58,25 @@ build:
     #- export AWS_SECRET_ACCESS_KEY=$(shipctl get_integration_field dr_aws )
     #- ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
+    - export pem_key_name=$(shipctl get_integration_resource_field pem_cd_war_vm "Keys")
+    - ./ssh.sh
 
-resources:
-  - name: pem_cd_war_vm
-    type: integration
-    integration: "drship_aws_pem"
-
-jobs:
-  - name: deploy_war_vm_ans
-    type: runSh
-    steps:
-      - IN: pem_cd_war_vm
-        switch: off
-      - TASK:
-          name: deploy_war
-          script:
-            - export pem_key_name=$(shipctl get_integration_resource_field pem_cd_war_vm "Keys")
-            - ./ssh.sh
+      #resources:
+      #  - name: pem_cd_war_vm
+      #    type: integration
+      #    integration: "drship_aws_pem"
+      #
+      #jobs:
+      #  - name: deploy_war_vm_ans
+      #    type: runSh
+      #    steps:
+      #      - IN: pem_cd_war_vm
+      #        switch: off
+      #      - TASK:
+      #          name: deploy_war
+      #          script:
+      #            - export pem_key_name=$(shipctl get_integration_resource_field pem_cd_war_vm "Keys")
+      #            - ./ssh.sh
 
 integrations:
 
