@@ -84,7 +84,7 @@ jobs:
             - cp $PEM_CD_WAR_VM_KEYPATH /tmp/pem_key.pem
             - ./ssh.sh
 
-      #integrations:
+integrations:
 
   # http://docs.shippable.com/ci/shippableyml/#notifications
   notifications:
