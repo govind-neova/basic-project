@@ -7,20 +7,28 @@ branches:
   only:
     - master
     
-#resources:
-#  - name: pem_keys
-#    type: integration
-#    integration: "SONAR-SERVER"
+resources:
+  - name: pem_keys
+    type: integration
+    integration: "drship_aws_pem"
+
+jobs:
+  - name: my_runCI
+    type: runCI
+    steps:
+      - IN: pem_keys
+      - TASK: 
+        - script :echo "Hello"
 
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
-env:
-  global:
-    - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
-    - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage
-    - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
-    - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
-    - Access_key=$(shipctl get_integration_resource_field SONAR-SERVER "Key")
+#env:
+#  global:
+#    - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
+#    - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage
+#    - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
+#    - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
+#    - Access_key=$(shipctl get_integration_resource_field SONAR-SERVER "Key")
 
 build:
 
@@ -38,8 +46,10 @@ build:
     - echo "hiiiiiiiiiiii"
     - date
     - ip r
+    - 
     #- ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
+
 #jobs:
 #  - name: myCustomJob
 #    type: runSh
@@ -49,20 +59,20 @@ build:
 #      - TASKS:
 #        - script: shipctl get_integration_keys "SONAR-SERVER"
 
-resources:
-  - name: pem_keys
-    type: integration
-    integration: "SONAR-SERVER"
-
-jobs:
-  - name: deploy_war_vm_ans
-    type: runSh
-    steps:
-      - IN: pem_keys
-        switch: off
-      - TASK:
-          name: deploy_war
-          script:
-            - echo "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")"
-
+#resources:
+#  - name: pem_keys
+#    type: integration
+#    integration: "SONAR-SERVER"
+#
+#jobs:
+#  - name: deploy_war_vm_ans
+#    type: runSh
+#    steps:
+#      - IN: pem_keys
+#        switch: off
+#      - TASK:
+#          name: deploy_war
+#          script:
+#            - echo "$(shipctl get_integration_resource_field SONAR-SERVER "Keys")"
+#
 
