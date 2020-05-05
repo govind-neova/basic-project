@@ -59,7 +59,6 @@ build:
     #- ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
     - export PUBLIC_SSH_KEY=$(shipctl get_integration_resource_field pem_cd_war_vm "Keys")
-    - shipctl copy_file_from_resource_state aws_ec2_ldap_tf_stat .
     - echo $PUBLIC_SSH_KEY
     - export PEM_KEY_PATH="/tmp/pem_key.pem"
     - cp $pem_cd_war_vm_KEYPATH $PEM_KEY_PATH
