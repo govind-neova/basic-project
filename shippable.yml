@@ -7,11 +7,11 @@ branches:
   only:
     - master
     
-      #resources:
-      #  - name: pem_keys
-      #    type: integration
-      #    integration: "mayurkey"
-      #
+resources:
+  - name: pem_keys
+    type: integration
+    integration: "drship_aws_pem"
+
       #jobs:
       #  - name: my_runCI
       #    type: runCI
@@ -43,7 +43,7 @@ build:
     #- $MOD_LOC/istanbul --include-all-sources cover -root "$SHIPPABLE_REPO_DIR/routes" $SHIPPABLE_REPO_DIR/node_modules/mocha/bin/_mocha -- -R spec-xunit-file --recursive "$TESTS_LOC_DIR/**/*.spec.js"
     #- $MOD_LOC/istanbul report cobertura --dir $CODE_COVERAGE_DIR
     #- popd
-    - shipctl get_integration_resource_field drship_aws_pem Key
+    - shipctl get_integration_resource_field pem_keys "Key"
     - echo $MAYURKEY_KEYPATH
     - date
     - ip r
