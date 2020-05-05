@@ -62,6 +62,7 @@ build:
     - echo $PUBLIC_SSH_KEY
     - export PEM_KEY_PATH="/tmp/pem_key.pem"
     - echo $PEM_KEY_PATH
+    - echo $PEM_CD_WAR_VM_KEYPATH
     - cp $PEM_CD_WAR_VM_KEYPATH /tmp/pem_key.pem
     - private_key = "${file(var.ec2privatekey)}"
     - echo $private_key
