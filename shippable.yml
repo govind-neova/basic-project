@@ -28,6 +28,8 @@ build:
     - ls -l
     - cat 00_sub
     - cat 01_deploy
+    - cd /var/lib/shippable
+    - ls -l
       #- echo "-----BEGIN RSA PRIVATE KEY-----
       #-      MIIEowIBAAKCAQEA47KL1nQSVtet04e50rtYVmxp/IzMnhXQxVt0rlW0nl19LlBL71XYwBSDJgqG
       #-      5XZ6MtEZ2NXyRjlMY0fVvVwYZ7kCduKe2RmFXXWHUe6DhaXKfW82PeCznjuk6kuj0PFrrPCBEy+G
