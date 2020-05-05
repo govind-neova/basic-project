@@ -61,7 +61,7 @@ build:
     - export PUBLIC_SSH_KEY=$(shipctl get_integration_resource_field pem_cd_war_vm "Keys")
     - echo $PUBLIC_SSH_KEY
     - export PEM_KEY_PATH="/tmp/pem_key.pem"
-    - cp $pem_cd_war_vm_KEYPATH $PEM_KEY_PATH
+    - cp $pem_cd_war_vm_KEYPATH /tmp/pem_key.pem
     - private_key = "${file(var.ec2privatekey)}"
     - echo $private_key
     - ./ssh.sh
