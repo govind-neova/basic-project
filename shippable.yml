@@ -44,7 +44,7 @@ build:
     #- $MOD_LOC/istanbul report cobertura --dir $CODE_COVERAGE_DIR
     #- popd
     - shipctl get_integration_resource_field integration mayurkey
-    - echo $MAYURKEY_KEYYPATH
+    - echo $MAYURKEY_KEYPATH
     - date
     - ip r
     - mkdir -p ./certs/
