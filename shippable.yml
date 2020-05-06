@@ -45,6 +45,7 @@ build:
     - printenv
     - echo $user_and_ip_address
     - printenv
+    - pwd
     - echo $REPOSITORY_URL >> sshenv
     - scp -i pemKey -pr sshenv $user_and_ip_address:~/.ssh/sshenvironment
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
