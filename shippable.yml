@@ -6,19 +6,11 @@ language: node_js
 branches:
   only:
     - master
-    
-resources:
-  - name: pem_keys
-    type: integration
-    integration: "drship_aws_pem"
 
-      #jobs:
-      #  - name: my_runCI
-      #    type: runCI
-      #    steps:
-      #      - IN: pem_keys
-      #      - TASK: 
-      #        - script :echo "Hello"
+integrations:
+  key:
+    - integrationName: pem_key
+      type: pemKey
 
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
