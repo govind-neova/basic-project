@@ -42,6 +42,10 @@ build:
     - ip r
     - ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
+  on_success:
+    - echo "Job is successful"
+  on_failure:  
+    - echo "Job is failed"
 
 #jobs:
 #  - name: myCustomJob
