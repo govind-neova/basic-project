@@ -38,14 +38,9 @@ build:
     - echo $(shipctl get_integration_resource_field pem_keys "Key")
     - cd /tmp/ssh
     - ls -l 
-    - chmod 777 /tmp/ssh/pemKey 
-    - cat /tmp/ssh/pemKey
-    - echo $PEM_KEYS_KEYPATH
-    - echo $MAYURKEY_KEYPATH
     - date
     - ip r
-    - echo "$PEM_KEYS_KEYPATH"
-    #- ssh -i /root/src/github.com/govind-neova/basic-project/Neov-nvirg.pem ubuntu@ec2-54-235-6-9.compute-1.amazonaws.com -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
+    - ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
     #- sudo -u  sonarqube bash -c ' sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start '
 
 #jobs:
