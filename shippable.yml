@@ -50,7 +50,7 @@ build:
     - chmod 777 sshenv
     - ls -l
     - cat sshenv
-    - scp -i pemKey sshenv $user_and_ip_address:/home/ubuntu/.ssh/sshenvironment
+    - scp -vvv -i pemKey sshenv $user_and_ip_address:/home/ubuntu/.ssh/sshenvironment
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
     - ssh -i pemKey $user_and_ip_address -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
   on_success:
