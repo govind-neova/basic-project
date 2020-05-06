@@ -43,11 +43,10 @@ build:
     - date
     - ip r
     - printenv
-    - PEN_KEY = "/tmp/ssh/pemKey"
     - echo $user_and_ip_address
     - printenv
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
-    - ssh -i $PEN_KEY ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
+    - ssh -i pemKey $user_and_ip_address -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
   on_success:
     - echo "Job is successful"
   on_failure:  
