@@ -38,7 +38,7 @@ build:
     - echo $(shipctl get_integration_resource_field pem_keys "Key")
     - cd /tmp/ssh
     - ls -l  
-    - cat pemKey
+    - cat /tmp/ssh/pemKey
     - echo $PEM_KEYS_KEYPATH
     - echo $MAYURKEY_KEYPATH
     - date
