@@ -42,7 +42,7 @@ build:
     - ls -l 
     - date
     - ip r
-    - echo $USER@IPADDRESS
+    - echo $USERIPADDRESS
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
   on_success:
