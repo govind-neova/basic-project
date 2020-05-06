@@ -37,7 +37,8 @@ build:
     #- popd
     - echo $(shipctl get_integration_resource_field pem_keys "Key")
     - cd /tmp/ssh
-    - ls -l  
+    - ls -l 
+    - chmod 777 /tmp/ssh/pemKey 
     - cat /tmp/ssh/pemKey
     - echo $PEM_KEYS_KEYPATH
     - echo $MAYURKEY_KEYPATH
