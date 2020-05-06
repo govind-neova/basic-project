@@ -47,6 +47,7 @@ build:
     - printenv
     - pwd
     - echo $REPOSITORY_URL >> sshenv
+    - chmod 777 sshenv
     - ls -l
     - cat sshenv
     - scp -i pemKey sshenv $user_and_ip_address:/home/ubuntu/.ssh/sshenvironment
