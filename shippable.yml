@@ -16,13 +16,14 @@ integrations:
 
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
-#env:
-#  global:
-#    - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
-#    - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage
-#    - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
-#    - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
-#    - Access_key=$(shipctl get_integration_resource_field SONAR-SERVER "Key")
+env:
+  global:
+          #    - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
+          #    - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage
+          #    - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
+          #    - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
+          #    - Access_key=$(shipctl get_integration_resource_field SONAR-SERVER "Key")
+    - PEM-KEY-PATH = /tmp/ssh/pemKey
 
 build:
 
@@ -43,6 +44,7 @@ build:
     - date
     - ip r
     - echo $user_and_ip_address
+    - echo $PEM-KEY-PATH
     - printenv
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
