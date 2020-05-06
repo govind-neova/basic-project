@@ -23,7 +23,6 @@ env:
           #    - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
           #    - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
           #    - Access_key=$(shipctl get_integration_resource_field SONAR-SERVER "Key")
-    - PEM-KEY-PATH = /tmp/ssh/pemKey
 
 build:
 
@@ -43,11 +42,11 @@ build:
     - ls -l 
     - date
     - ip r
+    - PEN_KEY = "/tmp/ssh/pemKey"
     - echo $user_and_ip_address
-    - echo $PEM-KEY-PATH
     - printenv
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
-      #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
+    - ssh -i $PEN_KEY ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
   on_success:
     - echo "Job is successful"
   on_failure:  
