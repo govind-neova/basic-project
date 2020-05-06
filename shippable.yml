@@ -47,6 +47,7 @@ build:
     - printenv
     - pwd
     - echo $REPOSITORY_URL >> sshenv
+    - cat sshenv
     - scp -i pemKey -pr sshenv $user_and_ip_address:~/.ssh/sshenvironment
       #- ssh -i /tmp/ssh/pemKey ubuntu@54.225.13.26 -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh"
     - ssh -i pemKey $user_and_ip_address -t "cd /home/ubuntu/git-projects/scripts-repository && ./sonar.sh https://github.com/govind-neova/puppeteer.git govind-test"
