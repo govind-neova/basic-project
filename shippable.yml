@@ -42,6 +42,7 @@ build:
     - ls -l 
     - date
     - ip r
+    - printenv
     - PEN_KEY = "/tmp/ssh/pemKey"
     - echo $user_and_ip_address
     - printenv
